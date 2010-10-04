@@ -1,0 +1,20 @@
+{
+    "name": "Boring RPG Enhancements",
+    "version": "1.0.1",
+    "content_scripts": [
+        {
+            "matches": ["http://www.boringrpg.com/game"],
+            "js": ["boringrpg.game.user.js"]
+        },
+        
+        {
+            "matches": ["http://www.boringrpg.com/guild"],
+            "js": ["boringrpg.guild.user.js"]
+        },
+	
+        {
+            "matches": ["http://www.boringrpg.com/chat"],
+            "js": ["boringrpg.chat.user.js"]
+        }
+    ]
+}
