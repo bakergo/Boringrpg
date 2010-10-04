@@ -1,5 +1,4 @@
 // ==UserScript==
-// @name            Hello World
 // @description     script to auto-submit the form on time, every time.
 // @include         http://boringrpg.com/guild
 // @include			http://boringrpg.com/game
