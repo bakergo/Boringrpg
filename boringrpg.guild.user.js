@@ -5,6 +5,16 @@
 // @include         http://www.boringrpg.com/guild
 // @include         http://www.boringrpg.com/game
 
+var wait_poll_secs = 1;
+var wait_refr_secs = 300;
+var wait_backoff_secs = 30;
+
+var interval_poll = wait_poll_secs * 1000;
+var delay_refr = wait_refr_secs * 1000;
+var delay_backoff = wait_backoff_secs * 1000 * Math.random();
+
+var timer;
+
 function last_user_clicked()
 {
     return document.links[7].text;
@@ -23,15 +33,21 @@ function check()
 {
     var checkregex = /can click/;
     
-    if(checkregex.test(document.getElementById('timer').innerHTML))
+    if(checkregex.test(document.getElementById('button').children[0].innerHTML))
     {   
-    	if(current_user() == last_user_clicked())
-            location.reload(true);
+        clearTimeout(timer);
+    	if(current_user() != last_user_clicked())
+        {
+            if(Math.random() < .3)
+                document.forms[0].submit();
+            else
+                setTimeout('location.reload(true)',delay_backoff);            
+        }
         else
-            document.forms[0].submit();
+        {
+            setTimeout('location.reload(true)',delay_refr);
+        }
     }
 }
 
-document.getElementById('chat-textbox').maxLength = 1024;
-
-setInterval(check, 1000);
+timer = setInterval(check, interval_poll);

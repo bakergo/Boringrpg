@@ -1,7 +1,6 @@
 {
     "name": "Boring RPG Enhancements",
-    "version": "1.0.1",
-    "permissions":["http://*/*","tabs"],
+    "version": "1.0.2",
     "content_scripts": [
         {
             "matches": ["http://www.boringrpg.com/game"],
@@ -16,6 +15,11 @@
         {
             "matches": ["http://www.boringrpg.com/chat"],
             "js": ["boringrpg.chat.user.js"]
+        },
+        
+        {
+            "matches": ["http://www.boringrpg.com/guild/treasury"],
+            "js": ["boringrpg.guild.treasury.user.js"]
         }
     ]
 }
