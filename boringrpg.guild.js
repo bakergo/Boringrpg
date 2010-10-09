@@ -1,4 +1,4 @@
-function(){
+(function(){
     var wait_poll_secs = 1;
     var wait_refr_secs = 300;
     var wait_backoff_secs = 30;
@@ -29,4 +29,4 @@ function(){
     }
 
     timer = setInterval(check, interval_poll);
-}();
+})();

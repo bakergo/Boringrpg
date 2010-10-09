@@ -1,4 +1,4 @@
-function(){
+(function(){
     var wait_secs = 1;
     var delay = wait_secs * 1000;
 
@@ -11,4 +11,4 @@ function(){
     }
 
     setInterval(check, delay);
-}();
+})();

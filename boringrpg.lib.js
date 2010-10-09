@@ -1,4 +1,4 @@
-Lib : {
+var Lib = {
     Guild : {        
         Treasury : {
             submit : function(){
@@ -32,13 +32,19 @@ Lib : {
         canClick : function(){
             var check = /can click/;
             return check.test(document.getElementById('button').innerText);
-        }
+        },
         
         submit : function(){
-            return document.forms[0].submit();
+            document.forms[0].submit();
         }
     },
 
+    insertScript : function (script){
+        inserted = document.createElement('script');
+        inserted.src = script;
+        document.script.appendChild(inserted);
+    },
+    
     user : function(){
         var sidebar = document.getElementById('sidebar');
         return sidebar.getElementsByTagName('h2')[0].innerText;
@@ -50,7 +56,7 @@ Lib : {
     },
 
     coins : function(){
-        var sidebar = document.getElementsById('sidebar');
+        var sidebar = document.getElementById('sidebar');
         return sidebar.getElementsByClassName('right')[4].innerText;
     }
 }

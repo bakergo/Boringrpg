@@ -1,4 +1,4 @@
-function(){
+(function(){
     var wait_mins = 20;
     var delay = wait_mins*60*1000;
 
@@ -8,7 +8,7 @@ function(){
         Lib.Guild.Treasury.submit();
     }
 
-    if(getCoins() > 0 || getTokens() > 0)
+    if(Lib.coins() > 0 || Lib.tokens() > 0)
         donate();
     setTimeout('location.reload(true)',delay);
-}();
+})();
