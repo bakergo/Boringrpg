@@ -4,22 +4,22 @@
     "content_scripts": [
         {
             "matches": ["http://www.boringrpg.com/game"],
-            "js": ["boringrpg.game.user.js","boringrpg.chat.user.js"]
+            "js": ["boringrpg.lib.js","boringrpg.game.user.js","boringrpg.chat.user.js"]
         },
         
         {
             "matches": ["http://www.boringrpg.com/guild"],
-            "js": ["boringrpg.guild.user.js","boringrpg.chat.user.js"]
+            "js": ["boringrpg.lib.js","boringrpg.guild.user.js","boringrpg.chat.user.js"]
         },
 	
         {
             "matches": ["http://www.boringrpg.com/chat"],
-            "js": ["boringrpg.chat.user.js"]
+            "js": ["boringrpg.lib.js","boringrpg.chat.user.js"]
         },
         
         {
             "matches": ["http://www.boringrpg.com/guild/treasury"],
-            "js": ["boringrpg.guild.treasury.user.js"]
+            "js": ["boringrpg.lib.js","boringrpg.guild.treasury.user.js"]
         }
     ]
 }
