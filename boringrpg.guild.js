@@ -9,20 +9,16 @@
 
     var timer;
 
-    function check()
-    {
-        if(Lib.Guild.canClick())
-        {   
+    function check(){
+        if(Lib.Guild.canClick()){   
             clearTimeout(timer);
-            if(Lib.User() != Lib.Guild.lastClicked())
-            {
+            if(Lib.user() != Lib.Guild.lastClicked()){
                 if(Math.random() < .3)
                     Lib.Guild.submit();
                 else
                     setTimeout('location.reload(true)',delay_backoff);            
             }
-            else
-            {
+            else{
                 setTimeout('location.reload(true)',delay_refr);
             }
         }

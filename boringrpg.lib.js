@@ -13,7 +13,7 @@ var Lib = {
                 document.getElementById('tokens').value = Lib.tokens();
             }
         },
-            
+        
         lastClicked : function(){
             return document.links[7].text;
         },
@@ -41,22 +41,29 @@ var Lib = {
 
     insertScript : function (script){
         inserted = document.createElement('script');
-        inserted.src = script;
-        document.script.appendChild(inserted);
+        inserted.src = chrome.extension.getURL(script);
+        document.head.appendChild(inserted);
     },
     
+    sidebar : document.getElementById('sidebar'),
+    
     user : function(){
-        var sidebar = document.getElementById('sidebar');
-        return sidebar.getElementsByTagName('h2')[0].innerText;
+        return Lib.sidebar.getElementsByTagName('h2')[0].innerText;
     },
 
-    tokens : function(){
-        var sidebar = document.getElementById('sidebar');
-        return sidebar.getElementsByClassName('right')[6].innerText;
+    clicks : function(){
+        return Lib.sidebar.getElementsByClassName('right')[3].innerText;
     },
 
     coins : function(){
-        var sidebar = document.getElementById('sidebar');
-        return sidebar.getElementsByClassName('right')[4].innerText;
+        return Lib.sidebar.getElementsByClassName('right')[4].innerText;
+    },
+    
+    items : function(){
+        return Lib.sidebar.getElementsByClassName('right')[5].innerText;
+    },
+    
+    tokens : function(){
+        return Lib.sidebar.getElementsByClassName('right')[6].innerText;
     }
 }

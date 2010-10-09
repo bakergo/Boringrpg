@@ -1,6 +1,6 @@
 (function(){
-    var wait_mins = 20;
-    var delay = wait_mins*60*1000;
+    var wait_secs = Lib.clicks()*10;
+    var delay = wait_secs*60*1000;
 
     function donate(){
         Lib.Guild.Treasury.setCoins(Lib.coins());
