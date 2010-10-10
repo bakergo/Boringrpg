@@ -5,18 +5,16 @@ var Lib = {
                 document.forms[0].submit();
             },
             
-            setCoins : function(coins){
-                document.getElementById('coins').value = Lib.coins();
+            setCoins : function(coin){
+                document.getElementById('coins').value = coin;
             },
             
-            setTokens : function(tokens){
-                document.getElementById('tokens').value = Lib.tokens();
-            }
+            setTokens : function(tok){
+                document.getElementById('tokens').value = tok;
+            },
         },
         
-        lastClicked : function(){
-            return document.links[7].text;
-        },
+        lastClicked : document.links[7].text,
         
         canClick : function(){
             var check = /can click/;
@@ -38,6 +36,12 @@ var Lib = {
             document.forms[0].submit();
         }
     },
+    
+    PartyBox : {
+        submit : function(){
+            document.forms[0].submit();
+        }
+    },
 
     insertScript : function (script){
         inserted = document.createElement('script');
@@ -47,23 +51,13 @@ var Lib = {
     
     sidebar : document.getElementById('sidebar'),
     
-    user : function(){
-        return Lib.sidebar.getElementsByTagName('h2')[0].innerText;
-    },
+    user : sidebar.getElementsByTagName('h2')[0].innerText,
 
-    clicks : function(){
-        return Lib.sidebar.getElementsByClassName('right')[3].innerText;
-    },
+    clicks : sidebar.getElementsByClassName('right')[4].innerText,
 
-    coins : function(){
-        return Lib.sidebar.getElementsByClassName('right')[4].innerText;
-    },
+    coins : sidebar.getElementsByClassName('right')[5].innerText,
     
-    items : function(){
-        return Lib.sidebar.getElementsByClassName('right')[5].innerText;
-    },
+    items : sidebar.getElementsByClassName('right')[6].innerText,
     
-    tokens : function(){
-        return Lib.sidebar.getElementsByClassName('right')[6].innerText;
-    }
+    tokens : sidebar.getElementsByClassName('right')[7].innerText
 }

@@ -12,7 +12,7 @@
     function check(){
         if(Lib.Guild.canClick()){   
             clearTimeout(timer);
-            if(Lib.user() != Lib.Guild.lastClicked()){
+            if(Lib.user != Lib.Guild.lastClicked){
                 if(Math.random() < .3)
                     Lib.Guild.submit();
                 else

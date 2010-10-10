@@ -1,25 +1,25 @@
 {
     "name": "Boring RPG Enhancements",
-    "version": "3",
+    "version": "5",
     "content_scripts": [
         {
             "matches": ["http://www.boringrpg.com/game"],
-            "js": ["boringrpg.lib.js","boringrpg.game.js","boringrpg.chat.js"]
+            "js": ["boringrpg.lib.js","boringrpg.game.js"]
         },
         
         {
             "matches": ["http://www.boringrpg.com/guild"],
-            "js": ["boringrpg.lib.js","boringrpg.guild.js","boringrpg.chat.js"]
+            "js": ["boringrpg.lib.js","boringrpg.guild.js"]
         },
-	
-        {
-            "matches": ["http://www.boringrpg.com/chat"],
-            "js": ["boringrpg.lib.js","boringrpg.chat.js"]
-        },
-        
+	        
         {
             "matches": ["http://www.boringrpg.com/guild/treasury"],
             "js": ["boringrpg.lib.js","boringrpg.guild.treasury.js"]
+        },
+        
+        {
+            "matches": ["http://www.boringrpg.com/party-box"],
+            "js": ["boringrpg.lib.js","boringrpg.party-box.js"]
         }
     ]
 }

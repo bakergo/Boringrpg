@@ -1,14 +1,14 @@
 (function(){
-    var wait_secs = Lib.clicks()*10;
-    var delay = wait_secs*60*1000;
+    var wait_mins = 40;
+    var delay = wait_mins*60*1000;
 
     function donate(){
-        Lib.Guild.Treasury.setCoins(Lib.coins());
-        Lib.Guild.Treasury.setTokens(Lib.tokens());
+        Lib.Guild.Treasury.setCoins(Lib.coins);
+        Lib.Guild.Treasury.setTokens(Lib.tokens);
         Lib.Guild.Treasury.submit();
     }
 
-    if(Lib.coins() > 0 || Lib.tokens() > 0)
+    if(Lib.coins > 0 || Lib.tokens > 0)
         donate();
     setTimeout('location.reload(true)',delay);
 })();
