@@ -1,5 +1,5 @@
 {
-    "name": "Boring RPG Enhancements",
+    "name": "Boring RPG Auto-play",
     "version": "5",
     "content_scripts": [
         {
