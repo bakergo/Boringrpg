@@ -1,6 +1,6 @@
 {
     "name": "Boring RPG Auto-play",
-    "version": "5",
+    "version": "6",
     "content_scripts": [
         {
             "matches": ["http://www.boringrpg.com/game"],
