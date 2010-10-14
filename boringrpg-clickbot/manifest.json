@@ -20,6 +20,11 @@
         {
             "matches": ["http://www.boringrpg.com/party-box"],
             "js": ["boringrpg.lib.js","boringrpg.party-box.js"]
-        }
+        },
+        
+        {
+			"matches": ["http://www.boringrpg.com/chat"],
+			"js": ["boringrpg.lib.js","boringrpg.chat.js"]
+		}
     ]
 }
