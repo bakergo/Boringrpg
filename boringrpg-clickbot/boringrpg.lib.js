@@ -1,4 +1,4 @@
-var Lib = {
+var Lib = {    
     Guild : {        
         Treasury : {
             submit : function(){
@@ -49,8 +49,11 @@ var Lib = {
         document.head.appendChild(inserted);
     },
     
-    sidebar : document.getElementById('sidebar'),
-    
+    Timer : {
+        rawMinutes:parseInt(document.getElementById('side-timer').innerText.split(':')[0]),
+        rawSeconds:parseInt(document.getElementById('side-timer').innerText.split(':')[1]),        
+    },
+
     user : sidebar.getElementsByTagName('h2')[0].innerText,
 
     clicks : sidebar.getElementsByClassName('right')[4].innerText,

@@ -1,11 +1,9 @@
 (function(){
-    var wait_secs = 1;
+    var minutes = isNaN(Lib.Timer.rawMinutes)?0:Lib.Timer.rawMinutes;
+    var seconds = isNaN(Lib.Timer.rawSeconds)?0:Lib.Timer.rawSeconds;
+    
+    var wait_secs = minutes*60 + seconds;
     var delay = wait_secs * 1000;
 
-    function check(){
-        if(Lib.Game.canClick())
-            Lib.Game.submit();
-    }
-
-    setInterval(check, delay);
+    setTimeout(Lib.Game.submit, delay);
 })();
