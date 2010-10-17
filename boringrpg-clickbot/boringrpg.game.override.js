@@ -1,8 +1,8 @@
 (function(){
 	var vals = $('#button>span>b').get();
 	
-	var rawMinutes = (vals.length > 1)? parseInt(vals[0].innerText) : 0;
-	var rawSeconds = (vals.length > 2)? parseInt(vals[1].innerText) : 0;
+	var rawMinutes = (vals.length >= 1)? parseInt(vals[0].innerText) : 0;
+	var rawSeconds = (vals.length >= 2)? parseInt(vals[1].innerText) : 0;
 	
     var minutes = isNaN(rawMinutes)?0:rawMinutes;
     var seconds = isNaN(rawSeconds)?0:rawSeconds;
@@ -31,10 +31,10 @@
 			if(intervalTimer)
 				clearInterval(intervalTimer);
 			intervalTimer = setInterval(function(){
-				clickInterval = nextClick - new Date();
+				clickInterval = (nextClick - new Date())/1000;
 				Game.timer.html(
 					(clickInterval > 0)?
-						'<b>' + Math.floor(clickInterval / 1000 / 60) + '</b> minutes, <b>' + Math.floor(clickInterval/1000 % 60) + '</b> seconds left.'
+						'<b>' + Math.floor(clickInterval / 60) + '</b> minutes, <b>' + Math.floor(clickInterval % 60) + '</b> seconds left.'
 						: 'You can click <u>now</u>!');},1000);
 			setTimeout(function(){Game.submit(Game.handleData);}, delay);
 		},
