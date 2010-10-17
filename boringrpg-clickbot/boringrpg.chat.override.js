@@ -1,11 +1,14 @@
 (function(){
 	global_chat		 = {name : 'World'	,	channel : 'global_chat'};
 	army_of_one	 	 = {name : 'Ao1'	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiLoxkM'};
-	chaotic_neutral  = {name : 'CN' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBijkBUM'};
 	blight_is_might  = {name : 'BiM' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjL5RUM'};
-	exit  			 = {name : 'Exit' 	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjppRMM'};
-	tardis 			 = {name : 'Tar' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBj1gxkM'};
+	chaotic_neutral  = {name : 'CN' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBijkBUM'};
+	danger_zone		 = {name : 'Danger' ,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjOtSUM'};
 	ewigkeit 		 = {name : 'ek' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiwyBwM'};
+	exit  			 = {name : 'Exit' 	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjppRMM'};
+	narwhals		 = {name : 'Nar'	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiM1igM'};
+	tardis 			 = {name : 'Tar' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBj1gxkM'};
+	thantanos		 = {name : 'Than'	,	channel	: 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjshCMM'};
 	Zzzzzzzz		 = {name : 'Zzz'	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjpnSUM'};
 	
 	var chatbox = $('div[id$=chat-chatbox]');
