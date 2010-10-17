@@ -1,3 +1,9 @@
+var consts = {
+	requestType : {
+		NOTIFICATION : 0
+	}
+}
+
 var Lib = {    
     Guild : {        
         Treasury : {
@@ -30,10 +36,6 @@ var Lib = {
         canClick : function(){
             var check = /can click/;
             return check.test(document.getElementById('button').innerText);
-        },
-        
-        submit : function(){
-            document.forms[0].submit();
         }
     },
     
@@ -49,9 +51,14 @@ var Lib = {
         document.head.appendChild(inserted);
     },
     
-    Timer : {
-        rawMinutes:parseInt(document.getElementById('side-timer').innerText.split(':')[0]),
-        rawSeconds:parseInt(document.getElementById('side-timer').innerText.split(':')[1]),        
+    notify : function(title, message){
+		chrome.extension.sendRequest({
+			type:consts.requestType.NOTIFICATION,
+			value:{
+				title: title,
+				message: message
+			}
+		});
     },
 
     user : sidebar.getElementsByTagName('h2')[0].innerText,

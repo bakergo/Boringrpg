@@ -1,6 +1,6 @@
 {
     "name": "Boring RPG Auto-play",
-    "version": "6.0",
+    "version": "7.0",
 	"update_url": "http://www.uc.edu/~bakergo/boringrpg/clickbot/updates.xml",
     "content_scripts": [
         {
