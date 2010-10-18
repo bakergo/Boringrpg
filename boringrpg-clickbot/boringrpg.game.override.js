@@ -65,4 +65,6 @@
 	}
 	
 	Game.setTimer();
+    PUBNUB.unsubscribe({channel:'global_chat'});
+    
 })();

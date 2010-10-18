@@ -1,15 +1,25 @@
 (function(){
-	global_chat		 = {name : 'World'	,	channel : 'global_chat'};
-	army_of_one	 	 = {name : 'Ao1'	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiLoxkM'};
-	blight_is_might  = {name : 'BiM' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjL5RUM'};
-	chaotic_neutral  = {name : 'CN' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBijkBUM'};
-	danger_zone		 = {name : 'Danger' ,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjOtSUM'};
-	ewigkeit 		 = {name : 'ek' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiwyBwM'};
-	exit  			 = {name : 'Exit' 	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjppRMM'};
-	narwhals		 = {name : 'Nar'	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiM1igM'};
-	tardis 			 = {name : 'Tar' 	, 	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBj1gxkM'};
-	thantanos		 = {name : 'Than'	,	channel	: 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjshCMM'};
-	Zzzzzzzz		 = {name : 'Zzz'	,	channel : 'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjpnSUM'};
+    function decorator(tag, color){
+        return ' (<span style="color:'+color+'">'+tag+'</span>)';
+    }
+    
+    function channel(name, channel){
+        return {name:name, decorator:decorator(name, '#FF9933'), channel:channel};
+    }
+    
+	global_chat		 = {name : 'World'	,	decorator : '', channel : 'global_chat'};
+    newbie_chat      = {name : 'Newbie' ,   decorator : decorator('Newbie','#3399FF'), channel : 'newbie_chat'};
+	army_of_one	 	 = channel('Ao1'    ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiLoxkM');
+    bacon            = channel('Bacon'  ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiYkCQM');
+	blight_is_might  = channel('BiM' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjL5RUM');
+	chaotic_neutral  = channel('CN' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBijkBUM');
+	danger_zone		 = channel('Danger' ,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjOtSUM');
+	ewigkeit 		 = channel('ek' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiwyBwM');
+	exit  			 = channel('Exit' 	,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjppRMM');
+	narwhals		 = channel('Nar'	,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiM1igM');
+	tardis 			 = channel('Tar' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBj1gxkM');
+	thantanos		 = channel('Than'   ,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjshCMM');
+	Zzzzzzzz		 = channel('Zzz'    ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjpnSUM');
 	
 	var chatbox = $('div[id$=chat-chatbox]');
 	var chatselect = $('select[id=chat-channel]');
@@ -26,7 +36,7 @@
 	}
 
 	function writeFormattedMessage(guild, message){
-		chatbox.append('<b>' + formatTime(message.time) + ' (<span style="color: #FF9933">' + guild.name + '</span>) <a href="/user/' + html2entities(message.username) + '">' + html2entities(message.username) + '</a></b>: ' + format(message.message) + '<br />');
+		chatbox.append('<b>' + formatTime(message.time) + guild.decorator + ' <a href="/user/' + html2entities(message.username) + '">' + html2entities(message.username) + '</a></b>: ' + format(message.message) + '<br />');
 	}
 	
 	function subscribeFactory(guild){
@@ -61,15 +71,20 @@
 	}
 	
 	[
-		global_chat,
-//		army_of_one,
-		chaotic_neutral,
-		blight_is_might,
-		exit,
-		tardis,
-//		ewigkeit,
-//		Zzzzzzzz
-	].map(add_guild);
+        global_chat,		 
+//        newbie_chat,      
+//        army_of_one,	 	 
+//        bacon      ,      
+        blight_is_might,  
+        chaotic_neutral, 
+//        danger_zone,		 
+//        ewigkeit    ,		 
+        exit  		,	 
+//        narwhals	,	 
+//        tardis 		,	 
+//        thantanos	
+//        Zzzzzzzz	,	 
+    ].map(add_guild);
 	
 	function fillChatBox(){		
 			function writeHistoryMessage(m){
