@@ -2,6 +2,7 @@
     "name": "Boring RPG Auto-play",
     "version": "7.1",
 	"update_url": "http://www.uc.edu/~bakergo/boringrpg/clickbot/updates.xml",
+    "background_page": "boringrpg.background.html",
     "content_scripts": [
         {
             "matches": ["http://www.boringrpg.com/game"],

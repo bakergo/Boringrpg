@@ -62,12 +62,8 @@ var Lib = {
     },
 
     user : sidebar.getElementsByTagName('h2')[0].innerText,
-
     clicks : sidebar.getElementsByClassName('right')[4].innerText,
-
     coins : sidebar.getElementsByClassName('right')[5].innerText,
-    
     items : sidebar.getElementsByClassName('right')[6].innerText,
-    
     tokens : sidebar.getElementsByClassName('right')[7].innerText
 }

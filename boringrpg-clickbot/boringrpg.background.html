@@ -1,0 +1,28 @@
+<script src='boringrpg.lib.js' />
+<script>
+var handlers = {
+	notify : 
+	function(notifyRequest){
+		var notification = webkitNotifications.createNotification(
+			'http://boringrpg.com/favicon.ico',
+			notifyRequest.title,
+			notifyRequest.message);
+		notification.show();
+	}
+}
+
+var listeners = {
+	requestListener : 
+	function (request, sender, sendResponse){
+		switch(request.type){
+			case consts.requestType.NOTIFICATION:
+				handlers.notify(request.value);
+				break;
+		}
+		
+		sendResponse({type:request.type, status:COMPLETE});
+	}
+}
+
+chrome.extension.onRequest.addListener(listeners.requestListener);
+</script>

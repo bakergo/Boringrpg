@@ -7,19 +7,20 @@
         return {name:name, decorator:decorator(name, '#FF9933'), channel:channel};
     }
     
-	global_chat		 = {name : 'World'	,	decorator : '', channel : 'global_chat'};
-    newbie_chat      = {name : 'Newbie' ,   decorator : decorator('Newbie','#3399FF'), channel : 'newbie_chat'};
-	army_of_one	 	 = channel('Ao1'    ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiLoxkM');
-    bacon            = channel('Bacon'  ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiYkCQM');
-	blight_is_might  = channel('BiM' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjL5RUM');
-	chaotic_neutral  = channel('CN' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBijkBUM');
-	danger_zone		 = channel('Danger' ,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjOtSUM');
-	ewigkeit 		 = channel('ek' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiwyBwM');
-	exit  			 = channel('Exit' 	,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjppRMM');
-	narwhals		 = channel('Nar'	,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiM1igM');
-	tardis 			 = channel('Tar' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBj1gxkM');
-	thantanos		 = channel('Than'   ,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjshCMM');
-	Zzzzzzzz		 = channel('Zzz'    ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjpnSUM');
+	global_chat		= {name : 'World'   ,	decorator : '', channel : 'global_chat'};
+    newbie_chat     = {name : 'Newbie'  ,   decorator : decorator('Newbie','#3399FF'), channel : 'newbie_chat'};
+	army_of_one	 	= channel('Ao1'     ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiLoxkM');
+    bacon           = channel('Bacon'   ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiYkCQM');
+	blight_is_might = channel('BiM' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjL5RUM');
+	chaotic_neutral = channel('CN' 	    , 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBijkBUM');
+	danger_zone		= channel('Danger'  ,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjOtSUM');
+	ewigkeit 		= channel('ek' 	    , 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiwyBwM');
+	exit  			= channel('Exit' 	,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjppRMM');
+	narwhals		= channel('Nar'	    ,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiM1igM');
+	tardis 			= channel('Tar' 	, 	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBj1gxkM');
+	thantanos		= channel('Than'    ,	'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjshCMM');
+    wake_the_dead   = channel('Wake'    ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBiLqygM');
+    Zzzzzzzz		= channel('Zzz'     ,   'guild_chat_agpib3JpbmdycGcxcg0LEgVHdWlsZBjpnSUM');
 	
 	var chatbox = $('div[id$=chat-chatbox]');
 	var chatselect = $('select[id=chat-channel]');
@@ -71,19 +72,10 @@
 	}
 	
 	[
-        global_chat,		 
-//        newbie_chat,      
-//        army_of_one,	 	 
-//        bacon      ,      
-        blight_is_might,  
-        chaotic_neutral, 
-//        danger_zone,		 
-//        ewigkeit    ,		 
-        exit  		,	 
-//        narwhals	,	 
-//        tardis 		,	 
-//        thantanos	
-//        Zzzzzzzz	,	 
+        global_chat,   
+        blight_is_might,
+        chaotic_neutral,
+        exit, 
     ].map(add_guild);
 	
 	function fillChatBox(){		
