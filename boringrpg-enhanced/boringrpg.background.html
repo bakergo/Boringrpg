@@ -30,7 +30,7 @@ var pageTimer = {
         if(pageTimer.tgame)
             clearTimeout(pageTimer.tgame);
         pageTimer.game = seconds;
-        pageTimer.tgame = setTimeout(notifyGame, pageTimer.game*1000);
+        pageTimer.tgame = setTimeout(pageTimer.notifyGame, pageTimer.game*1000);
     },
     
     guild : 0,
@@ -49,22 +49,22 @@ var pageTimer = {
         if(pageTimer.tguild)
             clearTimeout(pageTimer.tguild);
         pageTimer.guild = seconds;
-        pageTimer.tguild = setTimeout(notifyGuild, pageTimer.guild*1000);
+        pageTimer.tguild = setTimeout(pageTimer.notifyGuild, pageTimer.guild*1000);
     }
 }
 
 var handlers = {
 	notify : 
-	function(notifyRequest){
+	function(request){
 		var notification = webkitNotifications.createNotification(
 			'http://boringrpg.com/favicon.ico',
-			notifyRequest.title,
-			notifyRequest.message);
+			request.title,
+			request.message);
 		notification.show();
 	},
     
     update :
-    function(updateRequest){
+    function(request){
         if(request.game != undefined)
             pageTimer.setGameTime(request.game);
         if(request.guild != undefined)
@@ -89,7 +89,7 @@ var listeners = {
                 break;
 		}
 		
-		sendResponse({type:request.type, status:COMPLETE});
+		sendResponse({type:request.type, status:consts.responseType.SUCCESS});
 	}
 }
 

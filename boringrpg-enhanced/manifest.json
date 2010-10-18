@@ -1,17 +1,17 @@
 {
     "name": "Boring RPG Enhanced",
-    "version": "7.2",
+    "version": "7.2.10",
 	"update_url": "http://www.uc.edu/~bakergo/boringrpg/enhanced/updates.xml",
     "background_page": "boringrpg.background.html",
     "permissions":["notifications"],
     "content_scripts": [
         {
-            "matches": ["http://www.boringrpg.com/game"],
+            "matches": ["http://*.boringrpg.com/game"],
             "js": ["boringrpg.lib.js","boringrpg.game.js"]
         },
         
         {
-            "matches": ["http://www.boringrpg.com/guild"],
+            "matches": ["http://*.boringrpg.com/guild"],
             "js": ["boringrpg.lib.js","boringrpg.guild.js"]
         }
     ]

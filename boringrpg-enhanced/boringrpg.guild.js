@@ -1,1 +1,4 @@
-(function(){Lib.Guild.update();})();
+(function(){
+    Lib.Guild.initMembers();
+    Lib.Guild.update();
+})();
