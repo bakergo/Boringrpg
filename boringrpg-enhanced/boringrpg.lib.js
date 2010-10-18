@@ -1,50 +1,72 @@
 var consts = {
 	requestType : {
-		NOTIFICATION : 0
+		NOTIFICATION : 0,
+        UPDATE : 1
 	}
 }
 
 var Lib = {    
-    Guild : {        
-        Treasury : {
-            submit : function(){
-                document.forms[0].submit();
-            },
-            
-            setCoins : function(coin){
-                document.getElementById('coins').value = coin;
-            },
-            
-            setTokens : function(tok){
-                document.getElementById('tokens').value = tok;
-            },
-        },
-        
+    Guild : {
         lastClicked : document.links[7].text,
+        
+        getTimeRemaining : function(){
+            var reNums = /[0-9]+/g;
+            var minutes = 0;
+            var seconds = 0;
+            matches = button.innerText.match(reNums);
+            if(matches.length >= 1)
+                minutes = parseInt(matches[0]);
+            if(matches.length >= 2)
+                seconds = parseInt(matches[1]);
+            return minutes*60+seconds;
+        },
         
         canClick : function(){
             var check = /can click/;
             return check.test(document.getElementById('button').innerText);
         },
         
-        submit : function(){
-            return document.forms[0].submit();
+        update : function(){
+            chrome.extension.sendRequest({
+                type:consts.requestType.UPDATE,
+                value:{
+                    guild: Lib.Guild.getTimeRemaining(),
+                    guilduser: Lib.Guild.lastClicked,
+                    user: Lib.user
+                }
+            });
         }
     },
 
     Game : {
+        getTimeRemaining : function(){
+            var reNums = /[0-9]+/g;
+            var minutes = 0;
+            var seconds = 0;
+            matches = button.innerText.match(reNums);
+            if(matches.length >= 1)
+                minutes = parseInt(matches[0]);
+            if(matches.length >= 2)
+                seconds = parseInt(matches[1]);
+            return minutes*60+seconds;
+        },
+        
         canClick : function(){
             var check = /can click/;
             return check.test(document.getElementById('button').innerText);
+        },
+        
+        update : function(){
+            chrome.extension.sendRequest({
+                type:consts.requestType.UPDATE,
+                value:{
+                    game: Lib.Game.getTimeRemaining(),
+                    user: Lib.user
+                }
+            });
         }
     },
     
-    PartyBox : {
-        submit : function(){
-            document.forms[0].submit();
-        }
-    },
-
     insertScript : function (script){
         inserted = document.createElement('script');
         inserted.src = chrome.extension.getURL(script);
