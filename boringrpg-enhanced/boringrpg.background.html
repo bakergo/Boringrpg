@@ -1,58 +1,8 @@
-<script src='boringrpg.lib.js' />
+<script src='boringrpg.lib.js' ></script>
+<script src='boringrpg.game.background.js'></script>
+<script src='boringrpg.guild.background.js'></script>
+<script src='boringrpg.partybox.background.js'></script>
 <script>
-(function(){
-    function notify(){
-        var date = new Date();
-        var countdown = 60;
-        var wait_secs = (countdown - (date.getMinutes() + date.getSeconds()/60)) * 60;
-        var delay = wait_secs * 1000;
-        
-        if(date.getMinutes() < 1)
-            Lib.notify('Boringrpg :: Party Box','It\'s party time!');
-        setTimeout(notify,delay);
-    }
-    notify();
-})();
-</script>
-<script>
-var pageTimer = {
-    user : null,
-    
-    game : 0,
-    tgame : null,
-    
-    notifyGame : function(){
-        Lib.notify('Boringrpg :: Game','Click the Game button.');
-        pageTimer.tgame = null;
-    },
-    
-    setGameTime : function(seconds){
-        if(pageTimer.tgame)
-            clearTimeout(pageTimer.tgame);
-        pageTimer.game = seconds;
-        pageTimer.tgame = setTimeout(pageTimer.notifyGame, pageTimer.game*1000);
-    },
-    
-    guild : 0,
-    tguild : null,
-    guildLastUser : null,
-    
-    notifyGuild : function(){
-        if(pageTimer.guildLastUser == pageTimer.user && pageTimer.user != null)
-            Lib.notify('Boringrpg :: Guild','Someone should click the Guild button.');
-        else if(pageTimer.user != null)
-            Lib.notify('Boringrpg :: Guild','You should click the Guild button.');
-        pageTimer.tguild = null;
-    },
-    
-    setGuildTime : function(seconds){
-        if(pageTimer.tguild)
-            clearTimeout(pageTimer.tguild);
-        pageTimer.guild = seconds;
-        pageTimer.tguild = setTimeout(pageTimer.notifyGuild, pageTimer.guild*1000);
-    }
-}
-
 var handlers = {
 	notify : 
 	function(request){
@@ -66,13 +16,13 @@ var handlers = {
     update :
     function(request){
         if(request.game != undefined)
-            pageTimer.setGameTime(request.game);
+            gameTimer.setGameTime(request.game);
         if(request.guild != undefined)
-            pageTimer.setGuildTime(request.guild);
+            guildTimer.setGuildTime(request.guild);
         if(request.guilduser != undefined)
-            pageTimer.guildLastUser = request.guilduser;
+            guildTimer.guildLastUser = request.guilduser;
         if(request.user != undefined)
-            pageTimer.user = request.user;
+            guildTimer.user = request.user;
     }
 }
 
