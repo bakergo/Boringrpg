@@ -1,6 +1,7 @@
 var gameTimer = {
     game: 0,
     tgame: null,
+    trequest: null,
     
     notifyGame : function(){
         handlers.notify({title:'Boringrpg :: Game',message:'Click the Game button.'});
@@ -12,6 +13,5 @@ var gameTimer = {
             clearTimeout(gameTimer.tgame);
         gameTimer.game = seconds;
         gameTimer.tgame = setTimeout(gameTimer.notifyGame, gameTimer.game*1000);
-//        handlers.notify({title:'Debug',message:'Game timer updated'});
     }
 }

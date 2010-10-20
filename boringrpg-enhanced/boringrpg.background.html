@@ -1,4 +1,4 @@
-<script src='boringrpg.lib.js' ></script>
+<script src='boringrpg.consts.js' ></script>
 <script src='boringrpg.game.background.js'></script>
 <script src='boringrpg.guild.background.js'></script>
 <script src='boringrpg.partybox.background.js'></script>
@@ -32,14 +32,14 @@ var listeners = {
 		switch(request.type){
 			case consts.requestType.NOTIFICATION:
 				handlers.notify(request.value);
+				sendResponse({type:request.type, status:consts.responseType.SUCCESS});
 				break;
                 
             case consts.requestType.UPDATE:
                 handlers.update(request.value);
+				sendResponse({type:request.type, status:consts.responseType.SUCCESS});
                 break;
 		}
-		
-		sendResponse({type:request.type, status:consts.responseType.SUCCESS});
 	}
 }
 
