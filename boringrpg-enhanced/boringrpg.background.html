@@ -11,6 +11,8 @@ var handlers = {
 			request.title,
 			request.message);
 		notification.show();
+		
+		setTimeout(notification.cancel, 5.5*1000);
 	},
     
     update :

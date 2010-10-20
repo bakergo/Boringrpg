@@ -1,6 +1,6 @@
 var Page = {
-    getTimeRemaining : function(){
-		return Lib.getTimeRemainingFromText(button.innerText);
+	getTimeRemaining : function(){
+		return Lib.getTimeRemainingFromText(document.getElementById('side-timer').innerText);
 	},
 	
 	getUser : function(){
@@ -14,19 +14,7 @@ var Page = {
 		};
 	},
 	
-	attachUpdateEvents : function(e){
-		function b(){
-			setTimeout(e,2000);
-		}
-		
-		document.getElementsByName('play')[0].addEventListener('click', b, false);
-	},
-	
 	injectObjects : {
 		script : ['chat.injected.js']		
 	}
 }
-
-
-
-
