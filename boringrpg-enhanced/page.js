@@ -4,10 +4,10 @@
 	if(Page.attachUpdateEvents)
 		Page.attachUpdateEvents(function(){Lib.update(Page.getUpdateObject())});
 		
-	if(Page.insertObjects)
+	if(Page.injectObjects)
 	{
-		if(Page.insertObjects.script)
-			Page.insertObjects.script.map(Lib.insertScript);
-			
+		if(Page.injectObjects.script)
+			for(script in Page.injectObjects.script)
+				Lib.insertScript(Page.injectObjects.script[script]);
 	}
 })();

@@ -12,7 +12,10 @@ var handlers = {
 			request.message);
 		notification.show();
 		
-		setTimeout(notification.cancel, 5.5*1000);
+		function dropNotification() {
+			notification.cancel();
+		}
+		setTimeout(dropNotification, 5.5*1000);
 	},
     
     update :
