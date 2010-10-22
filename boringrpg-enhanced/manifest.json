@@ -1,6 +1,6 @@
 {
     "name": "Boring RPG Enhanced",
-    "version": "8.1",
+    "version": "8.1.1",
 	"update_url": "http://www.uc.edu/~bakergo/boringrpg/enhanced/updates.xml",
     "background_page": "boringrpg.background.html",
     "permissions":["notifications"],
