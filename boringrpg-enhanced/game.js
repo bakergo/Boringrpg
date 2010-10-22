@@ -19,7 +19,7 @@ var Page = {
 			setTimeout(e,2000);
 		}
 		
-		document.getElementsByName('play')[0].addEventListener('click', b, false);
+		document.getElementsByClassName('play')[0].addEventListener('click', b, false);
 	},
 	
 	injectObjects : {
